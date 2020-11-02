@@ -1,8 +1,20 @@
-﻿https://opentutorials.org/module/3747
+﻿---
+layout: post
+title: POSIX CLI
+subtitle: 생활코딩 Posix CLI 정리노트
+categories: markdown
+tags: [정리노트, POSIX, CLI, Unix, 생활코딩, 공부]
+---
 
-## 생활코딩 - POSIX CLI1
+*본 포스트는 Unix 계열을 통칭하는 POSIX의 Command Line Interface에 대한 정리노트입니다.*
 
-### 커버페이지
+*포스트 내 모든 내용은 Opentutorials - Posix CLI1 수업에 기반하고 있습니다. 45분 정도의 YouTube 강좌이니 CLI가 생소하거나 이제 막 입문하려는 컴린이들은 직접 수강하는 것을 권합니다.*
+
+Opentutorials - Posix CLI1 강좌 : <https://opentutorials.org/module/3747>
+
+---
+
+## 0 커버페이지
 
 * What is **Interface**?
 	* 컴퓨터와 대화하는 방법
@@ -25,34 +37,36 @@
 		* Emulator를 이용하면 Windows도 제어 가능
 
 
-### 명령어 실행환경 준비
+### 0.1 명령어 실행환경 준비
 
 * 환경 준비
 	* Unix, Linux, MacOs : Terminal
 	*	Windows, IOS, Android : Emulator, Secure shell
 		* POSIX 환경이 아니므로 별도 우회가 필요
 
-* Terminal
-	pwd --> print working directory, 현재 폴더
-	ls --> list, 현재폴더 내 폴더/파일 정보
 
+---
 
-### 수업소개
+## 1 수업소개
 
 컴퓨터에서 가장 중요한 다음 2개 항목을 어떻게 제어하는지 공부
 
 > 1. File   
-2. Directory
+> 2. Directory
 
 |Func.|기능| File | Directory |
 |---|---|---|---|
 |Create |생성 |*editor* |`mkdir` |
-|Read |읽기 |*editor*, `cat`, `ls` |`ls` |
-|Update |수정 |*editor*, `mv` |`mv` |
+|Read |읽기 |*editor*<br>`cat`, `ls` |`ls` |
+|Update |수정 |*editor*<br>`mv` |`mv` |
 |Delete |삭제 |`rm` |`rm -r` |
 
 
-### 디렉토리의 사용
+---
+
+## 2 디렉토리 - Directory
+
+### 2.1 디렉토리의 사용
 
 `pwd` print working directory, 현재 작업 디렉토리 표시
 * `/` 	*Root directory*
@@ -66,7 +80,7 @@
 * `cd /example/dir` *명기된 디렉토리로 바로 이동*
 
 
-### 현재 디렉토리의 상태보기와 명령어의 형식
+### 2.2 현재 디렉토리의 상태보기와 명령어의 형식
 
 > `명령어 --help` 또는 `man 명령어`로 관련 command 설명 확인 가능   
 화살표로 위아래 내용 조회, 'q'를 눌러 탈출
@@ -83,7 +97,7 @@
 Windows의 경우, 명시적으로 숨김을 표기해야 함*
 
 
-### 디렉토리의 생로병사
+### 2.3 디렉토리의 생로병사
 
 `mkdir 디렉토리명`	Make directory, 신규 디렉토리를 생성
 
@@ -96,7 +110,7 @@ Windows의 경우, 명시적으로 숨김을 표기해야 함*
 > *File과 달리 디렉토리 rm(remove)은 실수 방지를 위해 -r 옵션을 필요로 한다. 참고로 -r은 remove file hierarchies를 뜻함*
 
 
-### 절대경로 vs. 상대경로
+### 2.4 절대경로 vs. 상대경로
 
 `cd /`	최상위 디렉토리 (Root directory)로 이동
 
@@ -108,11 +122,15 @@ Windows의 경우, 명시적으로 숨김을 표기해야 함*
 	* 상대경로 (Relative path)&nbsp;&nbsp;&nbsp;&nbsp;현재 위치에 따라 변함
 
 > *Example @ `pwd	/Users/Ex-dir`에서*   
-상대경로 참조 이동 :  `cd ./posix`		   
-절대경로 참조 이동 :  `cd /Users/Ex-dir/posix`
+> 상대경로 참조 이동 :  `cd ./posix`   
+> 절대경로 참조 이동 :  `cd /Users/Ex-dir/posix`
 
 
-### 파일생성과 읽기
+---
+
+## 3 파일 - File
+
+### 3.1 파일생성과 읽기
 
 파일은 적절한 *Editor* 로 생성한다. *(Ex. nano, vim ...)*
 
@@ -124,41 +142,56 @@ Windows의 경우, 명시적으로 숨김을 표기해야 함*
 > *`cat`은 concatenate의 약자로 파일안의 컨텐츠를 출력하거나 파일들을 이어 주는 명령어*
 
 
-### 파일수정과 삭제
+### 3.2 파일수정과 삭제
 
-nano hello.txt	해당 문서 수정
+`nano 문서이름.txt` *nano editor로 해당 문서 수정 (없을 경우, 신규 생성)*
 
-mv OLD_NAME NEW_NAME	파일 이름 변경
-mv name ../name		디렉토리 변경하면서 파일 이동
+`mv 기존이름 새이름`	*파일 이름 변경*   
+`mv 파일이름 ../파일이름`		*디렉토리 변경하면서 파일 이동*
 
-CTRL+C		명령 취소 (입력값은 실행되지 않음)
-파일이름 일부 작성 후 'TAB'	자동완성
-clear	화면 지우기
+`CTRL+C` **명령 취소** *, 입력값은 실행되지 않음*   
 
-rm NAME		파일 삭제
+`파일이름 일부 작성 후 'TAB'`	*자동완성*
 
-### GUI vs. CLI
+`clear`	*화면 지우기*
 
-CLI	풍부하고 정확한 내용을 지시/전달할 수 있음
-	원하는 명령을 순차적으로 한 번에 지시 가능
+`rm 파일이름` *파일 삭제*
 
-### 순서대로 실행하기
 
-명령과 명령 사이는 ;으로 구분
+---
 
-예. mkdir dummy;cd dummy;touch hello.txt;cd..;ls -R
+## 4. Command Line Interface
 
-### 자동화 - 실패하면 실행 멈추기
+### 4.1 GUI vs. CLI
 
-&& 	AND operator
-	; 대신 && 사용 시, 앞의 명령어가 성공했을 경우만 이후 명령이 실행
+CLI가 갖는 또 하나의 놀라운 장점
+1. **풍부하고 정확한 내용**을 지시/전달할 수 있음
+1. 원하는 명령을 **순차적으로 한 번에 지시** 가능
 
-### 수업을 마치며
 
-추가로 공부하면 좋을 주제
+### 4.2 순서대로 실행하기
 
-Program		Shell script
-pacakge manager	(MAC) homebrew
-Maintain	storage memory processor --> top, htop
-		이를 잘 알려면 컴퓨터 구조를 잘 알아야 (computer architecture)
-Network		네트워크 설정/관리
+명령과 명령 사이는 ;으로 구분하면 한 번에 Command 적용 가능
+
+`(ex) mkdir dummy;cd dummy;touch hello.txt;cd..;ls -R`
+
+
+### 4.3 자동화 - 실패하면 실행 멈추기
+
+위의 순차 적용은 실패할 경우, 다음 command로 자동이동
+
+`&&` 	AND operator   
+`;` 대신 `&&` 사용하면 앞의 명령어가 성공했을 경우만 이후 명령이 실행
+
+
+---
+
+## 5. 수업을 마치며
+
+egoing 선생님이 추천해 주는 추가로 공부하면 좋을 주제
+
+* Program : 	Shell script
+* Pacakge manager :	(MAC) homebrew
+* Maintain : (Storage/Memory/Processor) --> top, htop
+	* 컴퓨터 구조에 대한 공부 (Computer architecture)
+* Network		네트워크 설정/관리
