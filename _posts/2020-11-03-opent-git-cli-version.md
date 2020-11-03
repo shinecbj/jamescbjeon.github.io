@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Git CLI : 버전관리
+title: Git CLI - 버전관리
 subtitle: 생활코딩 Git CLI-버전관리 정리노트
 categories: markdown
 tags: [Git, CLI, 버전관리, Version Management, 생활코딩, 정리노트, 공부]
