@@ -2,11 +2,11 @@
 layout: post
 title: Git CLI - 버전관리
 subtitle: 생활코딩 Git CLI-버전관리 정리노트
-categories: markdown
-tags: [Git, CLI, 버전관리, Version Management, 생활코딩, 정리노트, 공부]
+categories: 정리노트
+tags: [Git, CLI, 버전관리, 생활코딩, 정리노트]
 ---
 
-*본 포스트는 필수 개발 도구인 버전관리 시스템, Git의 Version Management에 대한 정리노트입니다.*
+*본 포스트는 필수 개발 도구인 Git의 버전관리에 대한 정리노트입니다.*
 
 *포스트 내 모든 내용은 생활코딩 - Git CLI - 버전관리 수업에 기반하고 있습니다. 40분 정도의 YouTube 강좌이니 수강 후 간략히 아래 내용을 훑어 보시는 것을 권합니다.*
 
@@ -37,7 +37,7 @@ tags: [Git, CLI, 버전관리, Version Management, 생활코딩, 정리노트, �
 `git config --global core.editor "vim"`  git 기본 에디터를 vim으로 변경   
 `git config --global core.editor "nano"`  git 기본 에디터를 nano로 변경
 
-
+***
 
 ## 0 커버페이지
 
@@ -45,9 +45,9 @@ tags: [Git, CLI, 버전관리, Version Management, 생활코딩, 정리노트, �
 * CLI는 입문은 어렵지만, 알고나면 아래의 장점을 갖음 : [Posix CLI 정리][blog-posix-cli]
   * 한번에 여러 명령을 일괄처리 가능
   * GUI 없는 서버 등 환경에서도 사용 가능
-* ~단, Terminal 지옥에 익숙해야 한다는 함정~
+* ~~단, Terminal 지옥에 익숙해야 한다는 함정~~
 
-> GUI 기반의 SourceTree나 Github Desktop도 많이 쓰이고 있음. 단, git 자체가 CLI 기반으로 제작되어 사용이 편리한 편(?)이며, CLI로 기본을 익히면 GUI 환경에서 좀 더 풍부한 이해로 작업할 수 있음. 관련 GUI clients는 [git GUI clients 바로가기][git-gui-clinets]를 참조할 것.
+> GUI 기반의 SourceTree나 Github Desktop도 많이 쓰이고 있음. 단, git 자체가 CLI 기반으로 제작되어 사용이 편리한 편(?)이며, CLI로 기본을 익히면 GUI 환경에서 좀 더 풍부한 이해로 작업할 수 있음. 관련 GUI clients는 [git GUI clients 바로가기][git-gui-clinets]를 참조.
 
 ## 1 git 준비
 
@@ -68,7 +68,7 @@ $ git
 `git init`  Initialize git (git 생성)   
 `git init .`  '.'는 현재 디렉토리. 즉, 현재 위치에서 git 생성
 
-~~~Example - Terminal
+~~~Terminal
 $ mkdir hello-git-cli;cd hello-git-cli;ls -al # 신규 폴더 생성 및 이동 후 점검
 $ git init .  # 해당 위치에 git 생성
 $ ls -al  # list 확인 시, '.git'이라는 신규 git repository가 생성. 향후 git 작업은 해당 repository에서 진행.
@@ -95,16 +95,16 @@ $ cd ..
 
 `git status` Working tree 상태 확인
 
-`git add "필요파일"` 작업 사항을 Staging area에 반영   
+`git add FILE_NAME` 작업 사항을 Staging area에 반영   
 `git add .` '.'은 모든 파일 추가를 의미
 
-`git commit -m "커밋메시지"` Staging area에 추가된 파일을 최종 버젼에 반영
+`git commit -m COMMIT_MESSAGE` Staging area에 추가된 파일을 최종 버젼에 반영
 
 `git log` Commit 이력 및 Commit ID를 확인   
 `git log --stat` Commit 관련 상세 파일 이력 확인 (수정된 파일의 통계정보)
 `git log -p` 각 Commit의 diff 결과 (적용된 패치Patch 조회)
 
-~~~Example - Terminal
+~~~Terminal
 $ nano hello1.txt  # hello1.txt 생성. 내용 작성 후 저장
 $ cat hello1.txt  # 내용 확인
 
@@ -148,10 +148,10 @@ $ git log --stat
 
 `git diff`  이전 버젼과 차이점 비교. 'git log -p'로도 가능
 
-`git reset`  기존 commit으로 원복
+`git reset`  기존 commit으로 원복   
 `git reset --hard`  --hard의 경우, 기존 commit으로 원복되며 이후에 실행된 모든 commit은 삭제. 즉, 다시 현재 상태로 올 수 없음.
 
-~~~Example - Terminal
+~~~Terminal
 $ nano hello1.txt  # hello1.txt를 수정 후 저장
 $ git status
 $ git diff	#	이전버젼과 차이점을 비교
@@ -164,11 +164,11 @@ $ git log -p  # 기존 commit 시점으로 원복되며, 작업 사항은 모두
 
 ### 3.1 checkout과 시간여행
 
-`git checkout 커밋번호/브랜치`  해당 commit_ID 혹은 branch로 이동   
+`git checkout COMMIT_ID/BRANCH`  해당 commit_ID 혹은 branch로 이동   
 
 > git checkout은 reset이 아니며, 해당 시점으로 INDEX를 이동시켜 마치 시간여행 하듯이 작업 사항을 변경시켜 주는 명령. 즉, 원하는 위치로 계속 이동 가능하며, 이 때 기존 작업사항은 그대로 유지됨.
 
-~~~Example - Terminal
+~~~Terminal
 $ ls -al
 $ cat hello1.txt
 $ cat hello2.txt  # 현재 상태의 hello1,2.txt를 확인
@@ -186,13 +186,13 @@ $ ls -al  # 모두 원복됨을 확인 가능
 
 ### 3.2 버전 삭제, reset
 
-`git reset 커밋번호` 해당 시점으로 HEAD 브랜치를 이동   
-`git reset --hard 커밋번호` HEAD 브랜치를 해당 commit을 이동하고 working directory까지 전부 업데이트. 복원 불가.   
+`git reset COMMIT_ID` 해당 시점으로 HEAD 브랜치를 이동   
+`git reset --hard COMMIT_ID` HEAD 브랜치를 해당 commit을 이동하고 working directory까지 전부 업데이트. 복원 불가.   
 `git reset --help` reset 관련 설명
 
 > reset과 checkout은 유사한 부분이 많아 정확한 이해가 필요. 관련 내용은 [참고자료 - git reset 명확히 알고 가기][git-reset]를 참조
 
-~~~Example - Terminal
+~~~Terminal
 $ git log
 $ git reset --hard commit_ID  # 해당 commit 시점으로 원복
 $ git log
@@ -200,11 +200,11 @@ $ git log
 
 ### 3.3 버전 되돌리기, revert
 
-`git revert 최종커밋번호`	해당 시점 직전으로 원복하는 신규 commit을 발행
+`git revert COMMIT_ID`	해당 시점 직전으로 원복하는 신규 commit을 발행
 
 > revert로 직전 commit이 아니라 여러 commit 이전으로 가고 싶다면, 해당 시점까지 발생된 commit을 단계적으로 revert해서 접근해야 함. 그렇지 않으면 충돌(conflict)이 발생. 왜냐하면 git revert는 해당 시점으로 변경되는 게 아니라 commit 발생시점에서 확인된 변화(patch)만 원복되는 것이므로.
 
-~~~Example - Terminal
+~~~Terminal
 $ git revert commit_ID 	# 해당 커밋을 취소하고 직전 버전으로 복귀
 $ git log
 $ git diff
