@@ -3,7 +3,7 @@ layout: post
 title: POSIX CLI
 subtitle: 생활코딩 Posix CLI 정리노트
 categories: markdown
-tags: [정리노트, POSIX, CLI, Unix, 생활코딩, 공부]
+tags: [POSIX, CLI, Unix, 생활코딩, 정리노트]
 ---
 
 *본 포스트는 Unix 계열을 통칭하는 POSIX의 Command Line Interface에 대한 정리노트입니다.*

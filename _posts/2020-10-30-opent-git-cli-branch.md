@@ -6,23 +6,28 @@ categories: markdown
 tags: [Git, CLI, Branch, Conflict, 생활코딩, 정리노트]
 ---
 
-*본 포스트는 필수 개발 도구인 버전관리 시스템, Git의 가지(Branch) 및 충돌(Conflict)에 대한 정리노트입니다.*
+*본 포스트는 필수 개발 도구인 Git의 가지(Branch) 및 충돌(Conflict)에 대한 정리노트입니다.*
+
+*포스트 내 모든 내용은 [생활코딩 - Git CLI - Branch & Conflict 수업][git-cli-branch]에 기반하고 있습니다. 아래 내용은 해당 강좌에 대한 내용 정리입니다.*
 
 > 생활코딩 Git CLI 정리노트   
   1. [Version - 버전관리][git1]
-  1. Branch & Conflict - 가지 및 충돌
-  1. Back-up - 백업
-  1. Collaboration - 협업
+  1. [Branch & Conflict - 가지 및 충돌][git2]
+  1. [Back-up - 백업][git3]
+  1. [Collaboration - 협업][git4]
   1. ~~Cherry pick & rebase~~
   1. ~~Github pull request~~
 
-[git1]: https://jamescbjeon.github.io/markdown/2020/11/03/opent-git-cli-version.html
+[git1]: https://jamescbjeon.github.io/markdown/2020/10/29/opent-git-cli-version.html
+[git2]: https://jamescbjeon.github.io/markdown/2020/10/30/opent-git-cli-branch.html
+[git3]: https://jamescbjeon.github.io/markdown/2020/10/31/opent-git-cli-backup.html
+[git4]: https://jamescbjeon.github.io/markdown/2020/11/01/opent-git-cli-collaboration.html
+[git-cli-branch]: https://opentutorials.org/course/3840
 
-*포스트 내 모든 내용은 생활코딩 - Git CLI - Branch & Conflict 수업에 기반하고 있습니다. 40분 정도의 YouTube 강좌이니 수강 후 간략히 아래 내용을 훑어 보시는 것을 권합니다.*
-
-> 생활코딩 - Git CLI Branch & Conflict 강좌 : <https://opentutorials.org/course/3840>
 
 ***
+
+
 
 ## 0 커버페이지
 
