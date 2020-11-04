@@ -45,8 +45,6 @@ Opentutorials - Posix CLI1 강좌 : <https://opentutorials.org/module/3747>
 		* POSIX 환경이 아니므로 별도 우회가 필요
 
 
----
-
 ## 1 수업소개
 
 컴퓨터에서 가장 중요한 다음 2개 항목을 어떻게 제어하는지 공부
@@ -61,8 +59,6 @@ Opentutorials - Posix CLI1 강좌 : <https://opentutorials.org/module/3747>
 |Update |수정 |*editor*<br>`mv` |`mv` |
 |Delete |삭제 |`rm` |`rm -r` |
 
-
----
 
 ## 2 디렉토리 - Directory
 
@@ -126,8 +122,6 @@ Windows의 경우, 명시적으로 숨김을 표기해야 함*
 > 절대경로 참조 이동 :  `cd /Users/Ex-dir/posix`
 
 
----
-
 ## 3 파일 - File
 
 ### 3.1 파일생성과 읽기
@@ -158,8 +152,6 @@ Windows의 경우, 명시적으로 숨김을 표기해야 함*
 `rm 파일이름` *파일 삭제*
 
 
----
-
 ## 4. Command Line Interface
 
 ### 4.1 GUI vs. CLI
@@ -184,11 +176,9 @@ CLI가 갖는 또 하나의 놀라운 장점
 `;` 대신 `&&` 사용하면 앞의 명령어가 성공했을 경우만 이후 명령이 실행
 
 
----
-
 ## 5. 수업을 마치며
 
-egoing 선생님이 추천해 주는 추가로 공부하면 좋을 주제
+egoing 선생님이 추천하는 추가로 공부하면 좋을 주제
 
 * Program : 	Shell script
 * Pacakge manager :	(MAC) homebrew
