@@ -81,14 +81,14 @@ Opentutorials - Posix CLI1 강좌 : <https://opentutorials.org/module/3747>
 > `명령어 --help` 또는 `man 명령어`로 관련 command 설명 확인 가능   
 화살표로 위아래 내용 조회, 'q'를 눌러 탈출
 
-`touch 파일명`	*make empty file*
+`touch FILE_NAME` 빈 파일 생성 (make empty file)
 
 `ls`	list, 현재 디렉토리 내 파일 및 디렉토리 목록을 반환
 * `ls -l`	*List in long format*
 * `ls -a`	*Show all files including hidden files*
 * `ls -a -l`, `ls -al` *-a, -l 옵션을 같이 사용. 이때 한 번에 -al로도 가능*
 
-> `.filename	hidden file`   
+> `.FILE_NAME`	hidden file   
 *POSIX에서는 파일명 앞에 '.'이 있으면 숨김파일로 인식   
 Windows의 경우, 명시적으로 숨김을 표기해야 함*
 
