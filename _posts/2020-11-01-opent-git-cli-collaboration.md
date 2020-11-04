@@ -6,7 +6,7 @@ categories: markdown
 tags: [Git, CLI, Collaboration, 생활코딩, 정리노트]
 ---
 
-*본 포스트는 필수 개발 도구인 Git의 백업(Backup)에 대한 정리노트입니다.*
+*본 포스트는 필수 개발 도구인 Git의 협업(Collaboration)에 대한 정리노트입니다.*
 
 *포스트 내 대부분의 내용은 [생활코딩 - Git CLI - 협업 수업][git-cli-collaboration]에 기반하고 있습니다. 아래 내용은 해당 강좌에 대한 내용 정리입니다.*
 
@@ -99,7 +99,7 @@ $ git fetch
 
 ## 4 수업을 마치며
 
-egoing 선생님이 추천해 주는 추가로 공부하면 좋을 git 관련 주제
+egoing 선생님이 추천하는 추가로 공부하면 좋을 git 관련 주제
 
 * code review
   * [gerrit][gerrit] : 안드로이드 오픈소스 개발툴. push 때 바로 병합되지 않고 투표소 이동 및 확인 후 병합.
