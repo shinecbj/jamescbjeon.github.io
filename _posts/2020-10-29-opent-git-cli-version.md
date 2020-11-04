@@ -233,7 +233,7 @@ egoing 선생님이 추천해 주는 추가로 공부하면 좋을 git 관련 �
 * tag :	commit_ID는 알아보기 힘드므로 쉬운 이름을 붙여 중요한 버젼을 찾아갈 수 있도록
 * backup : 다음 수업 주제		
 
-[blog-posix-cli]: https://jamescbjeon.github.io/markdown/2020/11/02/open-tutorial-posix-cli1.html
+[blog-posix-cli]: https://jamescbjeon.github.io/markdown/2020/10/28/opent-posix-cli1.html
 [git-hp]: https://git-scm.com/
 [git-gui-clinets]: https://git-scm.com/downloads/guis
 [git-reset]: https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Reset-%EB%AA%85%ED%99%95%ED%9E%88-%EC%95%8C%EA%B3%A0-%EA%B0%80%EA%B8%B0
